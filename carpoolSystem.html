@@ -1,12 +1,16 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carpool System</title>
     <link rel="stylesheet" href="css/style.css">
     <!-- Bootstrap CDN -->
-    <link href="css/bootstrap.min.css" rel="stylesheet"></head><body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
     <header class="bg-primary text-white text-center py-3">
-        <h1>Carpooling System</h1>
+        <h1>2조 카풀</h1>
     </header>
 
     <main class="container mt-5">
@@ -26,28 +30,23 @@
                     <input type="text" id="endPoint" name="endPoint" class="form-control" required>
                 </div>
                 <div class="mb-3">
-                    <label for="time" class="form-label">픽업 시간</label>
-                    <input type="time" id="time" name="time" class="form-control" required>
-                </div>
-                <div class="mb-3">
                     <label for="seat" class="form-label">좌석 수</label>
-                    <input type="number" id="seat" name="seat" class="form-control" min="1" max="4" required>
+                    <input type="number" id="seat" name="seat" class="form-control" min="1" max="4" placeholder="1~4까지 가능합니다." required>
                 </div>
-                <div class="text-end">
+                <div>
                     <button type="submit" class="btn btn-primary">확인</button>
                 </div>
             </form>
         </section>
 
         <section class="carpool-list">
-            <h2 class="">카풀 목록</h2>
+            <h2>카풀 목록</h2>
             <table id="carpoolTable" class="table table-striped table-bordered">
                 <!-- 카풀 리스트 목록들 -->
                 <thead class="table-dark">
                     <tr>
                         <th>출발지</th>
                         <th>목적지</th>
-                        <th>픽업 시간</th>
                         <th>좌석 수</th>
                     </tr>
                 </thead>
@@ -55,24 +54,23 @@
                     <tr>
                         <td>프라임관</td>
                         <td>익산역</td>
-                        <td>08:00</td>
                         <td>2</td>
                     </tr>
                     <tr>
                         <td>공학관</td>
                         <td>익산역</td>
-                        <td>09:00</td>
                         <td>3</td>
                     </tr>
                     <tr>
                         <td>남문</td>
                         <td>익산역</td>
-                        <td>11:00</td>
-                        <td>4</td>
+                        <td>3</td>
                     </tr>
                 </tbody>
             </table>
         </section>
     </main>
 
-    <script src="js/app.js"></script></body></html>
+    <script src="js/app.js"></script>
+</body>
+</html>
