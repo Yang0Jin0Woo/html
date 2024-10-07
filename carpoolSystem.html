@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpool System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Carpooling System</h1>
+    </header>
+
+    <main>
+        <section class="carpool-form">
+            <h2>카풀 입력</h2>
+            <form id="carpoolForm">
+                <div>
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="startPoint">출발지</label>
+                    <input type="text" id="startPoint" name="startPoint" required>
+                </div>
+                <div>
+                    <label for="endPoint">목적지</label>
+                    <input type="text" id="endPoint" name="endPoint" required>
+                </div>
+                <div>
+                    <label for="time">픽업 시간</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <div>
+                    <label for="seat">좌석 수</label>
+                    <input type="number" id="seat" name="seat" min="1" max="4" required>
+                </div>
+                <div>
+                    <button type="submit">확인</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="carpool-list">
+            <h2>카풀 목록</h2>
+            <table id="carpoolTable" border="1">
+                    <!-- 카풀 리스트 목록들 -->
+                    <thead>
+                        <tr>
+                            <th>출발지</th>
+                            <th>목적지</th>
+                            <th>픽업 시간</th>
+                            <th>좌석 수</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>프라임관</td>
+                            <td>익산역</td>
+                            <td>08:00</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>공학관</td>
+                            <td>익산역</td>
+                            <td>09:00</td>
+                            <td>3</td>
+                        </tr>
+                    </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
