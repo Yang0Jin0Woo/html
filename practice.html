@@ -93,7 +93,6 @@
           padding: 20px;
           transform: translateX(100%);
           transition: transform 0.3s ease;
-          z-index: 1000;
         }
     
         /* Show the panel when it is active */
@@ -131,15 +130,10 @@
           height: 100%;
           background: rgba(0, 0, 0, 0.5);
           display: none;
-          z-index: 999;
         }
     
         .overlay.active {
           display: block;
-        }
-
-        #map {
-            z-index: 1; /* Ensure the map stays behind the My Information panel */
         }
       </style>
 </head>
@@ -362,7 +356,7 @@
       var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
           mapOption = {
               center: new kakao.maps.LatLng(35.96830, 126.95792), // 지도의 중심좌표
-              level: 3, // 지도의 확대 레벨
+              level: 4, // 지도의 확대 레벨
               mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
           }; 
 

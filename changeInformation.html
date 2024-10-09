@@ -9,23 +9,23 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-4">
-                <h2 class="text-center" style="font-size: 36px;"><strong>회원가입</strong></h2>
+                <h2 class="text-center" style="font-size: 36px;"><strong>정보 수정</strong></h2>
                 <form id="signUpForm">
                     <div class="mb-3">
                         <label for="nickName" class="form-label"><strong>닉네임</strong></label>
-                        <input type="text" class="form-control" id="nickName" placeholder="닉네임을 입력하세요">
+                        <input type="text" class="form-control" id="nickName">
                     </div>
                     <div class="mb-3">
                         <label for="schoolId" class="form-label"><strong>학번</strong></label>
-                        <input type="text" class="form-control" id="schoolId" placeholder="학번을 입력하세요">
+                        <input type="text" class="form-control" id="schoolId">
                     </div>
                     <div class="mb-3">
                         <label for="userId" class="form-label"><strong>아이디</strong></label>
-                        <input type="text" class="form-control" id="userId" placeholder="아이디를 입력하세요">
+                        <input type="text" class="form-control" id="userId">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label"><strong>비밀번호</strong></label>
-                        <input type="password" class="form-control" id="password" placeholder="비밀번호를 입력하세요">
+                        <input type="password" class="form-control" id="password">
                     </div>
                     <div class="mb-3">
                         <label for="confirmPassword" class="form-label"><strong>비밀번호 확인</strong></label>
@@ -33,20 +33,17 @@
                     </div>
                     <!-- Button Group with Sign Up and Cancel -->
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button type="submit" class="btn btn-primary">회원가입</button>
-                        <button type="button" class="btn btn-danger" onclick="location.href='login.html'">취소</button>
+                        <button type="submit" class="btn btn-primary">수정</button>
+                        <button type="button" class="btn btn-danger" onclick="location.href='carpoolSystem.html'">취소</button>
                     </div>
                 </form>
-                <div class="text-center mt-3">
-                    <p>계정이 있으십니까? <strong><a href="login.html">로그인</a></strong></p>
-                </div>
             </div>
         </div>
     </div>
 
     <!-- Bootstrap JS (Optional) -->
     <script src="js/bootstrap.bundle.min.js"></script>
-
+    
     <!-- JavaScript to validate form fields -->
     <script>
         document.getElementById('signUpForm').addEventListener('submit', function(event) {
@@ -69,8 +66,10 @@
                 return;
             }
 
-            alert('회원가입 완료!');
-            window.location.href = 'login.html';
+            alert('수정 완료!');
+            window.location.href = 'carpoolSystem.html';
             // 여기에 폼 데이터를 서버로 전송하는 코드가 추가될 수 있습니다.
         });
-    </script></body></html>
+    </script>
+</body>
+</html>
