@@ -307,7 +307,7 @@
     // Handle form submission and switch to the list view
     carpoolForm.addEventListener('submit', function (e) {
         e.preventDefault(); // Prevent form submission from refreshing the page
-        carpoolForm.reset(); // Reset the form fields
+        carpoolForm.reset(); // Reset the form fields for new input
         carpoolFormSection.style.display = 'none';
         carpoolListSection.style.display = 'block';
     });
@@ -386,7 +386,7 @@
 
     // Use geolocation if available
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
+        navigator.geolocation.watchPosition(
             function (position) {
                 const userLocation = new kakao.maps.LatLng(position.coords.latitude, position.coords.longitude);
                 map.setCenter(userLocation);
