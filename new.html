@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpool Details</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .passenger-list {
+            margin-bottom: 20px;
+        }
+        .interaction {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<header class="bg-primary text-white text-center py-3">
+    <h1>Carpool Details</h1>
+</header>
+<main class="container mt-5">
+    <!-- Passenger List -->
+    <section class="passenger-list">
+        <h2>모집원</h2>
+        <ul class="list-group">
+            <li class="list-group-item">치킨</li>
+            <li class="list-group-item">피자</li>
+            <li class="list-group-item">콜라</li>
+            <li class="list-group-item">스파게티</li>
+        </ul>
+    </section>
+    <br>
+
+    <!-- Passenger Interaction -->
+    <section class="interaction">
+        <form id="interactionForm">
+            <div class="mb-3">
+                <label for="passengerName" class="form-label"><h4>이름</h4></label>
+                <input type="text" id="passengerName" name="passengerName" class="form-control" required>
+            </div>
+            <button type="button" class="btn btn-success" onclick="joinCarpool()">참여하기</button>
+            <button type="button" class="btn btn-danger" onclick="leaveCarpool()">나가기</button>
+        </form>
+    </section>
+</main>
+
+<script>
+    // Join Carpool Function
+    function joinCarpool() {
+        var passengerName = document.getElementById('passengerName').value;
+        if (passengerName) {
+            alert(passengerName + '은(는) 카풀에 참여했습니다.');
+        } else {
+            alert('이름을 입력하세요.');
+        }
+    }
+
+    // Leave Carpool Function
+    function leaveCarpool() {
+        if (confirm('카풀을 떠나겠습니까?')) {
+            window.location.href = 'carpoolSystem.html';
+        }
+    }
+</script>
+</body>
+</html>
