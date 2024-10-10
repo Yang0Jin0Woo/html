@@ -22,18 +22,6 @@
 </head>
 <body>
 <main class="container mt-5">
-    <!-- Passenger List -->
-    <section class="passenger-list">
-        <h2>모집원</h2>
-        <ul class="list-group">
-            <li class="list-group-item">치킨</li>
-            <li class="list-group-item">피자</li>
-            <li class="list-group-item">콜라</li>
-            <li class="list-group-item">스파게티</li>
-        </ul>
-    </section>
-    <br>
-
     <!-- Passenger Interaction -->
     <section class="interaction">
         <form id="interactionForm">
@@ -52,10 +40,45 @@
     function joinCarpool() {
         var passengerName = document.getElementById('passengerName').value;
         if (passengerName) {
+            let recruiterTable = document.getElementById('recruiterTable');
+            if (recruiterTable) {
+                const currentParticipants = recruiterTable.querySelectorAll('tbody tr').length;
+                if (currentParticipants >= 4) {
+                    alert('최대 인원은 4명입니다.');
+                    return;
+                }
+            }
             alert(passengerName + '은(는) 카풀에 참여했습니다.');
+            addToRecruiterTable(passengerName);
         } else {
             alert('이름을 입력하세요.');
         }
+    }
+
+    // Function to add participant to recruiter table
+    function addToRecruiterTable(name) {
+        let recruiterTable = document.getElementById('recruiterTable');
+        if (!recruiterTable) {
+            // Create table if not exist
+            recruiterTable = document.createElement('table');
+            recruiterTable.id = 'recruiterTable';
+            recruiterTable.className = 'table table-bordered mt-4';
+            recruiterTable.innerHTML = `
+                <thead>
+                    <tr>
+                        <th>참여자</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            `;
+            document.querySelector('main').appendChild(recruiterTable);
+        }
+
+        const tbody = recruiterTable.querySelector('tbody');
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `<td>${name}</td>`;
+        tbody.appendChild(newRow);
     }
 
     // Leave Carpool Function
@@ -65,5 +88,6 @@
         }
     }
 </script>
+
 </body>
 </html>
