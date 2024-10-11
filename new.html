@@ -22,6 +22,22 @@
 </head>
 <body>
 <main class="container mt-5">
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>출발지</th>
+                <th>목적지</th>
+                <th>좌석 수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>익산역</td>
+                <td>용산역</td>
+                <td>3</td>
+            </tr>
+        </tbody>
+    </table>
     <!-- Passenger Interaction -->
     <section class="interaction">
         <form id="interactionForm">
@@ -45,12 +61,14 @@
     // Join Carpool Function
     function joinCarpool() {
         var passengerName = document.getElementById('passengerName').value;
+        const seatLimit = parseInt(new URLSearchParams(window.location.search).get('seat'));
+
         if (passengerName) {
             let recruiterTable = document.getElementById('recruiterTable');
             if (recruiterTable) {
                 const currentParticipants = recruiterTable.querySelectorAll('tbody tr').length;
-                if (currentParticipants >= 4) {
-                    alert('최대 인원은 4명입니다.');
+                if (currentParticipants >= seatLimit) {
+                    alert(`최대 인원은 ${seatLimit}명입니다.`);
                     return;
                 }
             }
@@ -94,6 +112,27 @@
         }
     }
 </script>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const startPoint = urlParams.get('startPoint');
+        const endPoint = urlParams.get('endPoint');
+        const seat = urlParams.get('seat');
+
+        // Set the values to the table cells if available
+        if (startPoint && endPoint && seat) {
+            const tableBody = document.querySelector('table tbody');
+            tableBody.innerHTML = `
+                <tr>
+                    <td>${startPoint}</td>
+                    <td>${endPoint}</td>
+                    <td>${seat}</td>
+                </tr>
+            `;
+        }
+    });
+</script>
+
 
 </body>
 </html>

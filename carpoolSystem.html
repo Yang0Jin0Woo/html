@@ -349,8 +349,16 @@
         row.addEventListener('click', function () {
             const href = this.getAttribute('data-href');
             if (href) {
+                // Extract data from the clicked row
+                const startPoint = this.cells[0].textContent;
+                const endPoint = this.cells[1].textContent;
+                const seat = this.cells[2].textContent;
+
+                // Construct the URL with query parameters
+                const url = `${href}?startPoint=${encodeURIComponent(startPoint)}&endPoint=${encodeURIComponent(endPoint)}&seat=${encodeURIComponent(seat)}`;
+            
                 // Redirect to the URL in the data-href attribute
-                window.location.href = href;
+                window.location.href = url;
             }
         });
     });
@@ -425,5 +433,6 @@
         );
     }
 </script>
+
 </body>
 </html>
